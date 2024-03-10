@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .upload-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #image-preview {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        #image-input {
+            display: none;
+        }
+
+        label[for="image-input"] {
+            display: block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        label[for="image-input"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h2>Image Upload</h2>
+        <label for="image-input">Select an image</label>
+        <input type="file" id="image-input" accept="image/*">
+        <img id="image-preview" src="#" alt="Image Preview">
+
+        <script>
+            const imageInput = document.getElementById("image-input");
+            const imagePreview = document.getElementById("image-preview");
+
+            imageInput.addEventListener("change", function () {
+                const file = this.files[0];
+
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        imagePreview.src = e.target.result;
+                    };
+
+                    reader.readAsDataURL(file);
+                } else {
+                    imagePreview.src = "#";
+                }
+            });
+        </script>
+    </div>
+</body>
+</html> -->
+<style>
+.form {
+    background-color: rgb(9, 163, 214);
+    width: 300px; /* Set the width of the box */
+    padding: 20px; /* Add padding for spacing inside the box */
+    border: 1px solid rgb(225, 17, 6); /* Add a border around the box */
+    border-radius: 5px; /* Round the corners of the box */
+    margin: 0 auto; /* Center the box horizontally */
+}
+
+/* Style the form elements */
+.form input[type="file"],
+.form input[type="submit"],
+.form textarea,
+.form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bone Fracture Classification</title>
+</head>
+<style>
+</style>
+
+<body bgcolor="lightblue">
+    <h1 style="margin-left: 38%;margin-top: 10%;">Bone Fracture Classification</h1>
+    <div class="form">
+        <form style="margin-left: 35%;margin-top: 5%;" action="/classify" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" id="img_src"required>
+            <input type="submit" value="Classify" >
+        </form>
+    </div>
+</body>
+</html>
